@@ -1,17 +1,45 @@
 <html>
 <head>
-  <title>Leevi gato mem generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+</head>
+<body>
+
+
+
+<p>DL file:</p>
+<button class="btn"><i class="fa fa-download"></i> Download</button>
+
+<p>
+ 
+  <title>Pro man memes</title>
 <style type="text/css">
 #meme_text {
     background-color: transparent;
     font-size: 50px;
     font-family: "Impact";
-    color: black;
+    color: white;
     text-shadow: black 0px 0px 10px;
     width: 600px;
     position: absolute;
-    left: 150px;
-    top: 500px;
+    left: 100px;
+    top: 650px;
 }
 </style>
 </head>
@@ -31,6 +59,28 @@ function update_image(){
   var img = document.querySelector('img');
   var file = document.querySelector('input[type=file]').files[0];
   img.src = window.URL.createObjectURL(file);}
+  function download(file, text) {
+        
+                var element = document.createElement('a');
+                element.setAttribute('href', 
+                'data:text/plain;charset=utf-8, '
+                + encodeURIComponent(text));
+                element.setAttribute('download', file);
+
+                document.body.appendChild(element);
+
+                element.click();
+              
+                document.body.removeChild(element);
+            }
+        
+            document.getElementById("btn")
+            .addEventListener("click", function() {
+                var text = document.getElementById("text").value;
+                var filename = "GFG.txt";
+              
+                download(filename, text);
+            }, false);
 </script>
 
 
